@@ -7,7 +7,7 @@ interface IPropsButtonTrash extends ButtonHTMLAttributes<HTMLButtonElement> {}
 export const ButtonTrash: React.FC<IPropsButtonTrash> = ({ ...rest }) => {
   return (
     <ButtonTrashStyled {...rest}>
-      <FaTrash />
+      <FaTrash size={10} />
     </ButtonTrashStyled>
   );
 };

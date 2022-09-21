@@ -1,7 +1,8 @@
+import { Button } from "@components/Button";
 import React from "react";
 
 const App: React.FunctionComponent = () => {
-  return <h1>Hello world</h1>;
+  return <Button typeButton="disable" isActive>Clique em mim</Button>;
 };
 
 export default App;

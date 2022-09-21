@@ -1,7 +1,18 @@
 import React, { ButtonHTMLAttributes } from "react";
+import { ButtonStyled } from "./styles";
 
-interface IPropsButton extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface IPropsButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  typeButton: "primary" | "disable";
+  isActive?: boolean;
+}
 
-export const Button: React.FC<IPropsButton> = ({ children, ...rest }) => {
-  return <button {...rest}>{children}</button>;
+export const Button: React.FC<IPropsButton> = ({
+  children,
+  ...rest
+}) => {
+  return (
+    <ButtonStyled {...rest}>
+      {children}
+    </ButtonStyled>
+  );
 };

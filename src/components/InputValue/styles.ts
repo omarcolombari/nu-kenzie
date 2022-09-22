@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const InputValueStyled = styled.input`
+interface IPropsStyleInput {
+  error: boolean;
+}
+
+export const InputValueStyled = styled.input<IPropsStyleInput>`
   width: 92px;
   height: 22px;
   padding: 11px 16px;
@@ -11,10 +15,16 @@ export const InputValueStyled = styled.input`
   border: 2px solid ${(props) => props.theme.colors.grey1};
   border-radius: 8px;
 
+  border-color: ${(props) => props.error && "red"};
+
   text-align: center;
 
   ::placeholder {
     color: ${(props) => props.theme.colors.grey3};
+  }
+
+  &:focus {
+    outline: ${(props) => props.error && "none"};
   }
 `;
 

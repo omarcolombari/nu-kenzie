@@ -10,11 +10,18 @@ import {
 } from "./styles";
 import { FaAngleDown } from "react-icons/fa";
 
-export const Select: React.FC = () => {
+interface IPropsSelect {
+  setTypeValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const Select: React.FC<IPropsSelect> = ({ setTypeValue }) => {
   return (
     <Container>
       <Label>Tipo de valor</Label>
-      <SelectPrimitive.Root defaultValue="entrada">
+      <SelectPrimitive.Root
+        onValueChange={(data) => setTypeValue(data)}
+        defaultValue="entrada"
+      >
         <SelectTrigger>
           <SelectPrimitive.Value />
           <SelectPrimitive.Icon>

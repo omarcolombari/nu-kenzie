@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface IPropsStyleInput {
+  error: boolean;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -9,7 +13,7 @@ export const Container = styled.div`
   height: 100px;
 `;
 
-export const InputStyled = styled.input`
+export const InputStyled = styled.input<IPropsStyleInput>`
   padding: 13px 16px;
 
   background-color: ${(props) => props.theme.colors.grey1};
@@ -18,11 +22,14 @@ export const InputStyled = styled.input`
   border: 2px solid ${(props) => props.theme.colors.grey1};
   border-radius: 8px;
 
+  border-color: ${(props) => props.error && "red"};
+
   ::placeholder {
     color: ${(props) => props.theme.colors.grey3};
   }
   &:focus {
     outline: 2px solid ${(props) => props.theme.colors.grey5};
+    outline: ${(props) => props.error && "none"};
   }
 `;
 

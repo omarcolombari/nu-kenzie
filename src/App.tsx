@@ -1,13 +1,8 @@
-import { ButtonTrash } from "@components/ButtonTrash";
-import { CardEmpty } from "@components/CardEmpty";
-import { CardValue } from "@components/CardValue";
-import { Input } from "@components/Input";
-import { InputValue } from "@components/InputValue";
-import { Select } from "@components/Select";
 import React from "react";
+import { HomePage } from "@/pages/Home";
 
 const App: React.FunctionComponent = () => {
-  return <Select  />;
+  return <HomePage />;
 };
 
 export default App;

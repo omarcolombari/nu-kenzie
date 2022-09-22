@@ -17,3 +17,18 @@ export const InputValueStyled = styled.input`
     color: ${(props) => props.theme.colors.grey3};
   }
 `;
+
+export const Label = styled.label`
+  font: 400 12px "Inter";
+
+  color: ${(props) => props.theme.colors.grey5};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 128px;
+  height: 79px;
+`;

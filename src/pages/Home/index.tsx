@@ -8,7 +8,7 @@ export const HomePage: React.FC = () => {
   return (
     <Background>
       <Container>
-        <Logo src={LogoSvg} alt="" />
+        <Logo src={LogoSvg} alt="Nu Kenzie" />
         <Title>Centralize o controle das suas finanças</Title>
         <Span>de forma rápida e segura</Span>
         <Button typeButton="primary">Iniciar</Button>

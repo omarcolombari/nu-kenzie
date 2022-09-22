@@ -11,9 +11,9 @@ const theme = {
     grey5: "#212529",
   },
   fonts: {
-    title1: "800 38px 'Nunito'",
-    title2: "700 22px 'Nunito'",
-    title3: "700 16px 'Nunito'",
+    title1: "800 28px 'Nunito'",
+    title2: "700 24px 'Nunito'",
+    title3: "700 20px 'Nunito'",
     title4: "600 12px 'Nunito'",
     headline: "400 16px 'Nunito'",
     body: "400 12px 'Nunito'",

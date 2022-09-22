@@ -1,14 +1,14 @@
-import { ButtonTrash } from "@components/ButtonTrash";
+import { ButtonTrash } from "@/components/ButtonTrash";
 import React from "react";
 import { CardContainer, CardContent, Price, Title, TypeValue } from "./styles";
 
-interface IPropsCardValue {
+export interface IPropsCard {
   title: string;
   typeValue: string;
   value: string;
 }
 
-export const CardValue: React.FC<IPropsCardValue> = ({
+export const CardValue: React.FC<IPropsCard> = ({
   title,
   typeValue,
   value,

@@ -22,27 +22,29 @@ const primaryButton = css`
 `;
 
 const disableButton = css<IButton>`
-  background-color: ${(props) =>
-    props.isActive
-      ? props.theme.colors.colorPrimary
-      : props.theme.colors.grey2};
+  font-family: "Nunito";
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 15px;
+
   border: 1.4px solid
     ${(props) =>
       props.isActive
         ? props.theme.colors.colorPrimary
         : props.theme.colors.grey2};
-  padding: 15px;
 
-  font-family: "Nunito";
-  font-weight: 600;
-  font-size: 14px;
+  background-color: ${(props) =>
+    props.isActive
+      ? props.theme.colors.colorPrimary
+      : props.theme.colors.grey2};
+
   color: ${(props) =>
     props.isActive ? props.theme.colors.white : props.theme.colors.grey4};
 
   &:hover {
-    border-color: ${(props) => props.theme.colors.grey4};
-    background-color: ${(props) => props.theme.colors.grey4};
-    color: ${(props) => props.theme.colors.grey1};
+    border-color: ${(props) => !props.isActive && props.theme.colors.grey4};
+    background-color: ${(props) => !props.isActive && props.theme.colors.grey4};
+    color: ${(props) => !props.isActive && props.theme.colors.grey1};
   }
 `;
 

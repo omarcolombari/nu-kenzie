@@ -23,7 +23,7 @@ export const SelectTrigger = styled(SelectPrimitive.Trigger)`
 export const SelectContent = styled(SelectPrimitive.Content)`
   overflow: hidden;
   background-color: white;
-  
+
   border-radius: 3%;
   width: 128px;
   height: 71px;
@@ -55,4 +55,19 @@ export const StyledItem = styled(SelectPrimitive.Item)`
     outline: none;
     background-color: ${(props) => props.theme.colors.grey2};
   }
+`;
+
+export const Label = styled.label`
+  font: 400 12px "Inter";
+
+  color: ${(props) => props.theme.colors.grey5};
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 79px;
+  width: 150px;
 `;

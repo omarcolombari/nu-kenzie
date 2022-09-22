@@ -1,5 +1,5 @@
 // React
-import React from "react";
+import React, { useContext } from "react";
 
 // Styles
 import { AsideContainer, ContainerValues, Form } from "./styles";
@@ -17,6 +17,8 @@ import { useState } from "react";
 // Yup
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { FinanceContext } from "providers/Finances";
+import { FinanceContextType } from "@/types/finances";
 
 // Interface
 export interface IFormInput {
@@ -27,6 +29,7 @@ export interface IFormInput {
 
 export const Aside: React.FC = () => {
   const [typeValue, setTypeValue] = useState<string>("entrada");
+  const { createFinance } = useContext(FinanceContext) as FinanceContextType;
 
   const schema = yup.object().shape({
     description: yup.string().required("Description is required"),
@@ -49,7 +52,7 @@ export const Aside: React.FC = () => {
       ...data,
       typeValue,
     };
-    console.log(data);
+    createFinance(data);
   };
 
   console.log(errors);

@@ -22,7 +22,8 @@
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
       "@/utils/*": ["utils/*"],
-      "@/assets/*": ["assets/*"]
+      "@/assets/*": ["assets/*"],
+      "@/types/*": ["@types/*"]
     }
   },
   "include": ["src"],

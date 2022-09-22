@@ -27,10 +27,11 @@ export const TitleH3 = styled.h3`
   font: ${(props) => props.theme.fonts.title2};
   color: ${(props) => props.theme.colors.grey4};
 
-  margin: 27px 0;
+  margin-top: 27px;
 `;
 
 export const List = styled.ul`
+  margin-top: 27px;
   display: grid;
   grid-row-gap: 33.65px;
 `;

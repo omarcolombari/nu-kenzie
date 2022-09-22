@@ -3,17 +3,11 @@ import { CardEmpty } from "@components/CardEmpty";
 import { CardValue } from "@components/CardValue";
 import { Input } from "@components/Input";
 import { InputValue } from "@components/InputValue";
+import { Select } from "@components/Select";
 import React from "react";
 
 const App: React.FunctionComponent = () => {
-  return (
-    <Input
-      helperText="Helper Text"
-      placeholder="Placeholder"
-      label="Label"
-      name="teste"
-    />
-  );
+  return <Select  />;
 };
 
 export default App;

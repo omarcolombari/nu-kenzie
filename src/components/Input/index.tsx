@@ -1,11 +1,23 @@
 import React, { InputHTMLAttributes } from "react";
-import { InputStyled } from "./styles";
+import { Container, HelperText, InputStyled, Label } from "./styles";
 
 interface IPropsInput extends InputHTMLAttributes<HTMLInputElement> {
-  placeholder: string;
   name: string;
+  label: string;
+  helperText: string;
 }
 
-export const Input: React.FC<IPropsInput> = ({ ...rest }) => {
-  return <InputStyled {...rest} />;
+export const Input: React.FC<IPropsInput> = ({
+  name,
+  label,
+  helperText,
+  ...rest
+}) => {
+  return (
+    <Container>
+      <Label htmlFor={name}>{label}</Label>
+      <InputStyled {...rest} />
+      <HelperText>{helperText}</HelperText>
+    </Container>
+  );
 };

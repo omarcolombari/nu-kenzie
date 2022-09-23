@@ -23,7 +23,7 @@
       "@/public/*": ["public/*"],
       "@/utils/*": ["utils/*"],
       "@/assets/*": ["assets/*"],
-      "@/types/*": ["@types/*"]
+      "@/types/*": ["@types/*"],
     }
   },
   "include": ["src"],

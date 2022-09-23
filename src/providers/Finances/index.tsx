@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { FinanceContextType, IFinance } from "@/types/finances";
+import { compareObjects } from "@/utils/compare-objects";
 
 interface IProps {
   children?: React.ReactNode;
@@ -8,17 +9,27 @@ interface IProps {
 export const FinanceContext = createContext<FinanceContextType | null>(null);
 
 export const FinanceProvider: React.FC<IProps> = ({ children }) => {
-  const [finances, setFinances] = useState<IFinance[]>([]);
+  const [listTransactions, setListTransactions] = useState<IFinance[]>([]);
 
   const createFinance = (data: IFinance) => {
-    setFinances([...finances, data]);
+    setListTransactions([...listTransactions, data]);
+  };
+
+  const removeFinance = (finance: IFinance) => {
+    const newList = listTransactions.filter((item) => {
+      if (!compareObjects({ firstObject: finance, secondObject: item })) {
+        return item;
+      }
+    });
+    setListTransactions(newList);
   };
 
   return (
     <FinanceContext.Provider
       value={{
         createFinance,
-        finances,
+        listTransactions,
+        removeFinance,
       }}
     >
       {children}

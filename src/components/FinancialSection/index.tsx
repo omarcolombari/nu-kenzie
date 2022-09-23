@@ -16,8 +16,7 @@ import { FinanceContextType } from "@/types/finances";
 import { FinanceContext } from "providers/Finances";
 
 export const FinancialSection: React.FC = () => {
-  const { finances } = useContext(FinanceContext) as FinanceContextType;
-
+  const { listTransactions } = useContext(FinanceContext) as FinanceContextType;
   return (
     <SectionContainer>
       <Heading>
@@ -31,9 +30,9 @@ export const FinancialSection: React.FC = () => {
         </nav>
       </Heading>
       <article>
-        {finances.length ? (
+        {listTransactions.length ? (
           <List>
-            {finances.map(({ description, typeValue, value }) => (
+            {listTransactions.map(({ description, typeValue, value }) => (
               <CardValue card={{ description, typeValue, value }} />
             ))}
           </List>

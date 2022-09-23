@@ -7,6 +7,7 @@ export interface IFinance {
 }
 
 export type FinanceContextType = {
-  finances: IFinance[];
+  listTransactions: IFinance[];
   createFinance: (data: IFinance) => void;
+  removeFinance: (finance: IFinance) => void;
 };

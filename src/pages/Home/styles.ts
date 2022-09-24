@@ -13,7 +13,7 @@ export const Background = styled.main`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 
   width: 347px;
   height: 50%;

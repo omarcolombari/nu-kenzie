@@ -11,7 +11,7 @@ export const SectionContainer = styled.section`
   article {
     overflow-y: auto;
     overflow-x: hidden;
-    max-height: 400px;
+    max-height: 415px;
     margin-top: 24px;
 
     ::-webkit-scrollbar {
@@ -39,17 +39,4 @@ export const Heading = styled.div`
 export const TitleH2 = styled.h2`
   font: ${(props) => props.theme.fonts.title3};
   color: ${(props) => props.theme.colors.grey5};
-`;
-
-export const TitleH3 = styled.h3`
-  font: ${(props) => props.theme.fonts.title2};
-  color: ${(props) => props.theme.colors.grey4};
-
-  margin-top: 27px;
-`;
-
-export const List = styled.ul`
-  margin-top: 27px;
-  display: grid;
-  grid-row-gap: 33.65px;
 `;

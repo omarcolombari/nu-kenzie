@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react";
+import React from "react";
 
 // Styles
 import { Main } from "./styles";
@@ -8,7 +8,6 @@ import { Main } from "./styles";
 import { Header } from "@/components/Header";
 import { FinancialSection } from "@/components/FinancialSection";
 import { Aside } from "@/components/Aside";
-import { TotalValue } from "@/components/TotalValue";
 
 export const DashboardPage: React.FC = () => {
   return (

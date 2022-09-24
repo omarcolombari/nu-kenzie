@@ -1,8 +1,8 @@
 // React
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 // Styles
-import { Heading, List, SectionContainer, TitleH2, TitleH3 } from "./styles";
+import { Heading, SectionContainer, TitleH2 } from "./styles";
 
 // Components
 import { Button } from "@/components/Button";
@@ -10,42 +10,51 @@ import { Card } from "@/components/Card";
 import { CardEmpty } from "@/components/CardEmpty";
 
 // Types
-import { FinanceContextType } from "@/types/finances";
+import { TransactionContextType } from "@/types/transactions";
 
 // Context
-import { FinanceContext } from "providers/Finances";
+import { TransactionContext } from "@/providers/Transactions";
+import { FilterCards } from "../FilterCards";
 
 export const FinancialSection: React.FC = () => {
-  const { listTransactions } = useContext(FinanceContext) as FinanceContextType;
+  const { listTransactions } = useContext(
+    TransactionContext
+  ) as TransactionContextType;
+
+  const [filter, setFilter] = useState<"todos" | "entradas" | "despesas">(
+    "todos"
+  );
+
   return (
     <SectionContainer>
       <Heading>
         <TitleH2>Resumo financeiro</TitleH2>
         <nav>
-          <Button isActive typeButton="disable">
+          <Button
+            isActive={filter === "todos" && true}
+            typeButton="disable"
+            onClick={() => setFilter("todos")}
+          >
             Todos
           </Button>
-          <Button typeButton="disable">Entradas</Button>
-          <Button typeButton="disable">Despesas</Button>
+          <Button
+            isActive={filter === "entradas" && true}
+            typeButton="disable"
+            onClick={() => setFilter("entradas")}
+          >
+            Entradas
+          </Button>
+          <Button
+            isActive={filter === "despesas" && true}
+            typeButton="disable"
+            onClick={() => setFilter("despesas")}
+          >
+            Despesas
+          </Button>
         </nav>
       </Heading>
       <article>
-        {listTransactions.length ? (
-          <List>
-            {listTransactions.map(({ description, typeValue, value }) => (
-              <Card card={{ description, typeValue, value }} />
-            ))}
-          </List>
-        ) : (
-          <>
-            <TitleH3>Você ainda não possui nenhum lançamento</TitleH3>
-            <List>
-              <CardEmpty />
-              <CardEmpty />
-              <CardEmpty />
-            </List>
-          </>
-        )}
+        <FilterCards filter={filter} transactions={listTransactions} />
       </article>
     </SectionContainer>
   );

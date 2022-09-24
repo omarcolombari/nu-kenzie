@@ -1,16 +1,18 @@
 import { ButtonTrash } from "@/components/ButtonTrash";
-import { FinanceContextType, IFinance } from "@/types/finances";
+import { TransactionContextType, ITransaction } from "@/types/transactions";
 import React, { useContext } from "react";
 import { capitalizeFirstLetter } from "@/utils/capitalize-first-letter";
 import { CardContainer, CardContent, Price, Title, TypeValue } from "./styles";
-import { FinanceContext } from "providers/Finances";
+import { TransactionContext } from "@/providers/Transactions";
 
 export interface IProps {
-  card: IFinance;
+  card: ITransaction;
 }
 
 export const Card: React.FC<IProps> = ({ card }) => {
-  const { removeFinance } = useContext(FinanceContext) as FinanceContextType;
+  const { removeTransaction } = useContext(
+    TransactionContext
+  ) as TransactionContextType;
 
   return (
     <CardContainer typeValue={card.typeValue}>
@@ -24,7 +26,7 @@ export const Card: React.FC<IProps> = ({ card }) => {
           currency: "BRL",
         })}
       </Price>
-      <ButtonTrash onClick={() => removeFinance(card)} />
+      <ButtonTrash onClick={() => removeTransaction(card)} />
     </CardContainer>
   );
 };

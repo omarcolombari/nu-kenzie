@@ -1,8 +1,8 @@
-import { IFinance } from "@/types/finances";
+import { ITransaction } from "@/types/transactions";
 
 interface IPropsCompareObjects {
-  firstObject: IFinance;
-  secondObject: IFinance;
+  firstObject: ITransaction;
+  secondObject: ITransaction;
 }
 
 export const compareObjects = ({
@@ -16,7 +16,8 @@ export const compareObjects = ({
   }
   for (let key of firstObjectKeys) {
     if (
-      firstObject[key as keyof IFinance] !== secondObject[key as keyof IFinance]
+      firstObject[key as keyof ITransaction] !==
+      secondObject[key as keyof ITransaction]
     ) {
       return false;
     }

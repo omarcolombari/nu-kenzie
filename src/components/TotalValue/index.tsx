@@ -1,13 +1,15 @@
-import { FinanceContextType, IFinance } from "@/types/finances";
-import { FinanceContext } from "providers/Finances";
+import { TransactionContextType, ITransaction } from "@/types/transactions";
+import { TransactionContext } from "@/providers/Transactions";
 import React, { useContext } from "react";
 import { Container, ContainerTitle, Title, Span, Balance } from "./styles";
 
 export const TotalValue: React.FC = () => {
-  const { listTransactions } = useContext(FinanceContext) as FinanceContextType;
+  const { listTransactions } = useContext(
+    TransactionContext
+  ) as TransactionContextType;
 
-  const calculateTotalAmount = (finances: IFinance[]) => {
-    const result = finances.reduce((a, b) => {
+  const calculateTotalAmount = (Transactions: ITransaction[]) => {
+    const result = Transactions.reduce((a, b) => {
       return b.typeValue === "entrada" ? a + b.value : a - b.value;
     }, 0);
 

@@ -24,6 +24,7 @@
       "@/utils/*": ["utils/*"],
       "@/assets/*": ["assets/*"],
       "@/types/*": ["@types/*"],
+      "@/providers/*": ["providers/*"]
     }
   },
   "include": ["src"],

@@ -6,7 +6,7 @@ import { Heading, List, SectionContainer, TitleH2, TitleH3 } from "./styles";
 
 // Components
 import { Button } from "@/components/Button";
-import { CardValue } from "@/components/CardValue";
+import { Card } from "@/components/Card";
 import { CardEmpty } from "@/components/CardEmpty";
 
 // Types
@@ -33,7 +33,7 @@ export const FinancialSection: React.FC = () => {
         {listTransactions.length ? (
           <List>
             {listTransactions.map(({ description, typeValue, value }) => (
-              <CardValue card={{ description, typeValue, value }} />
+              <Card card={{ description, typeValue, value }} />
             ))}
           </List>
         ) : (

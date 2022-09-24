@@ -2,13 +2,14 @@
 import React, { useContext } from "react";
 
 // Styles
-import { AsideContainer, ContainerValues, Form } from "./styles";
+import { AsideContainer, ContainerForm, ContainerValues, Form } from "./styles";
 
 // Components
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
 import { InputValue } from "@/components/InputValue";
 import { Select } from "@/components/Select";
+import { TotalValue } from "@/components/TotalValue";
 
 // Hook Form
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -29,7 +30,9 @@ export interface IFormInput {
 
 export const Aside: React.FC = () => {
   const [typeValue, setTypeValue] = useState<string>("entrada");
-  const { createFinance } = useContext(FinanceContext) as FinanceContextType;
+  const { createFinance, listTransactions } = useContext(
+    FinanceContext
+  ) as FinanceContextType;
 
   const schema = yup.object().shape({
     description: yup.string().required("Description is required"),
@@ -59,23 +62,30 @@ export const Aside: React.FC = () => {
 
   return (
     <AsideContainer>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          register={register}
-          error={!!errors.description}
-          helperText="Ex: Compra de roupas"
-          label="Descrição"
-          placeholder="Digite aqui sua descrição"
-          name="description"
-        />
-        <ContainerValues>
-          <InputValue error={!!errors.value} register={register} name="value" />
-          <Select setTypeValue={setTypeValue} />
-        </ContainerValues>
-        <Button type="submit" style={{ width: "100%" }} typeButton="primary">
-          Inserir valor
-        </Button>
-      </Form>
+      <ContainerForm>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Input
+            register={register}
+            error={!!errors.description}
+            helperText="Ex: Compra de roupas"
+            label="Descrição"
+            placeholder="Digite aqui sua descrição"
+            name="description"
+          />
+          <ContainerValues>
+            <InputValue
+              error={!!errors.value}
+              register={register}
+              name="value"
+            />
+            <Select setTypeValue={setTypeValue} />
+          </ContainerValues>
+          <Button type="submit" style={{ width: "100%" }} typeButton="primary">
+            Inserir valor
+          </Button>
+        </Form>
+      </ContainerForm>
+      {listTransactions.length > 0 && <TotalValue />}
     </AsideContainer>
   );
 };

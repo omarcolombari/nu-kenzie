@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+interface IPropsStyledCard {
+  typeValue: string;
+}
+
+export const CardContainer = styled.div<IPropsStyledCard>`
   background-color: ${(props) => props.theme.colors.grey1};
   border-radius: 4px;
   width: 560px;
@@ -10,6 +14,10 @@ export const CardContainer = styled.div`
   justify-content: space-around;
 
   border-left: 4px solid ${(props) => props.theme.colors.grey2};
+  border-color: ${(props) =>
+    props.typeValue === "entrada"
+      ? props.theme.colors.colorSecondary
+      : props.theme.colors.grey2};
   &:hover {
     background-color: ${(props) => props.theme.colors.white};
     box-shadow: 0px 4px 42px -12px rgba(0, 0, 0, 0.25);

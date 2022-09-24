@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const AsideContainer = styled.aside`
+`
+
+export const ContainerForm = styled.div`
   width: 363px;
   height: 351px;
   display: flex;

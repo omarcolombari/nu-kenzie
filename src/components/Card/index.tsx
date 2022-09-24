@@ -9,21 +9,22 @@ export interface IProps {
   card: IFinance;
 }
 
-export const CardValue: React.FC<IProps> = ({
-  card
-}) => {
+export const Card: React.FC<IProps> = ({ card }) => {
   const { removeFinance } = useContext(FinanceContext) as FinanceContextType;
 
   return (
-    <CardContainer>
+    <CardContainer typeValue={card.typeValue}>
       <CardContent>
         <Title>{capitalizeFirstLetter(card.description)}</Title>
         <TypeValue>{capitalizeFirstLetter(card.typeValue)}</TypeValue>
       </CardContent>
       <Price>
-        {card.value.toLocaleString("pt-br", { style: "currency", currency: "BRL" })}
+        {card.value.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        })}
       </Price>
-      <ButtonTrash onClick={() => removeFinance(card) }/>
+      <ButtonTrash onClick={() => removeFinance(card)} />
     </CardContainer>
   );
 };

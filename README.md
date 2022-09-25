@@ -18,7 +18,7 @@
 
   <p>Para a construção do código, os seguintes frameworks e bibliotecas:</p>
   <ul>
-    <li>React.Js</li>
+    <li>ReactJs</li>
     <li>Styled Components</li>
     <li>React Router Dom@5</li>
     <li>React Hook Form</li>

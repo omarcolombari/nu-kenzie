@@ -4,7 +4,7 @@
 
 ## Conceito e funcionalidades
 
-<p>Um sistema web que possibilita a organização financeira de uma forma prática e rápida. Através do NuKenzie o usuário pode registrar seus investimentos, despesas, salários e tudo que for relacionado à finanças. No momento de criar um novo item, o usuário deverá colocar um nome, o valor e selecionar se é uma entrada ou despesa, um item registrado como entrada significa que é um dinheiro que você recebeu e um item de despesa é aquilo que você gastou. Ele também conseguirá filtar os itens, temos as opções de ver tudo, ver apenas as entradas e ver apenas as saidas.
+<p>Um sistema web que possibilita a organização financeira de uma forma prática e rápida. Através do NuKenzie o usuário pode registrar seus investimentos, despesas, salários e tudo que for relacionado à finanças. No momento de criar um novo item, o usuário deverá colocar um nome, o valor e selecionar se é uma entrada ou despesa, um item registrado como entrada significa que é um dinheiro que você recebeu e um item de despesa é aquilo que você gastou. Ele também conseguirá filtrar os itens, temos as opções de ver tudo, ver apenas as entradas e ver apenas as saidas.
 </p>
 
 <h2>Link para a página</h2>

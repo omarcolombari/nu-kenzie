@@ -10,7 +10,7 @@ export const HomePage: React.FC = () => {
   const goDashboard = () => history.push("/dashboard");
   return (
     <Background>
-      <Container>
+      <Container data-aos-duration="2000" data-aos="fade-right">
         <Logo src={LogoSvg} alt="Nu Kenzie" />
         <Title>Centralize o controle das suas finanças</Title>
         <Span>de forma rápida e segura</Span>
@@ -18,7 +18,12 @@ export const HomePage: React.FC = () => {
           Iniciar
         </Button>
       </Container>
-      <img src={IllustrationSvg} alt="" />
+      <img
+        data-aos="fade-left"
+        data-aos-duration="2000"
+        src={IllustrationSvg}
+        alt=""
+      />
     </Background>
   );
 };

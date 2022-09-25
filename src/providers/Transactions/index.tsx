@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { TransactionContextType, ITransaction } from "@/types/transactions";
 import { compareObjects } from "@/utils/compare-objects";
 
@@ -11,7 +11,17 @@ export const TransactionContext = createContext<TransactionContextType | null>(
 );
 
 export const TransactionProvider: React.FC<IProps> = ({ children }) => {
-  const [listTransactions, setListTransactions] = useState<ITransaction[]>([]);
+  const [listTransactions, setListTransactions] = useState<ITransaction[]>(
+    JSON.parse(localStorage.getItem("@nuKenzie:transactions") || "[]")
+  );
+
+  useEffect(() => {
+    localStorage.clear();
+    localStorage.setItem(
+      "@nuKenzie:transactions",
+      JSON.stringify(listTransactions)
+    );
+  }, [listTransactions]);
 
   const createTransaction = (data: ITransaction) => {
     setListTransactions([...listTransactions, data]);

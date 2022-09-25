@@ -1,6 +1,6 @@
 # NuKenzie
 
-<div align="center" ><img width="300" src="./src/assets/logo.svg" /></div>
+<div align="center" ><img width="300" src="./src/assets/logo-2.svg" /></div>
 
 ## Conceito e funcionalidades
 

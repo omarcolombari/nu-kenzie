@@ -8,7 +8,7 @@
 </p>
 
 <h2>Link para a página</h2>
-<a href="https://nu-kenzie-ivory.vercel.app/">NuKenzie</a>
+<a href="https://nu-kenzie-ivory.vercel.app/">Nu Kenzie</a>
 
 ## Tecnologias utilizadas
 
